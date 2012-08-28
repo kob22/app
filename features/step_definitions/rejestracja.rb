@@ -1,14 +1,24 @@
 # encoding: utf-8
-Wtedy /^klilkniemy w link Zarejestruj się$/ do
-  pending # express the regexp above with the code you wish you had
+Zakładając /^że jesteśmy na "(.*?)"$/ do |text|
+  visit root_url
+page.should have_content(text)
 end
 
-Wtedy /^zobaczymy tekst Zarejestruj się$/ do
-  pending # express the regexp above with the code you wish you had
+Zakładając /^klilkniemy w link "(.*?)"$/ do |link|
+  click_link(link)
 end
 
-Wtedy /^pola Tytuł, Imię, Nazwisko, Email, Hasło, Powtórz Hasło$/ do
-  pending # express the regexp above with the code you wish you had
+Wtedy /^zobaczymy tekst "(.*?)"$/ do |text|
+  page.should have_content(text)
+end
+
+Wtedy /^zobaczymy pola "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)"$/ do |arg1, arg2, arg3, arg4, arg5, arg6|
+  page.should have_content(arg1)
+  page.should have_content(arg2)
+  page.should have_content(arg3)
+  page.should have_content(arg4)
+  page.should have_content(arg5)
+  page.should have_content(arg6)
 end
 
 Wtedy /^uzupełnię "(.*?)" tekstem <tytuł>$/ do |arg1|
@@ -31,11 +41,11 @@ Wtedy /^uzupełnię "(.*?)" tekstem <hasło>$/ do |arg1|
   pending # express the regexp above with the code you wish you had
 end
 
-Wtedy /^kliknę przycisk Zarejestruję się$/ do
+Wtedy /^kliknę przycisk "(.*?)"$/ do |arg1|
   pending # express the regexp above with the code you wish you had
 end
 
-Wtedy /^zobaczę tekst Rejestracja przebiegła pomylśnie$/ do
+Wtedy /^zobaczę tekst "(.*?)"$/ do |arg1|
   pending # express the regexp above with the code you wish you had
 end
 
