@@ -23,11 +23,14 @@ end
 gem 'jquery-rails'
 
 group :test, :development do
+  gem "rspec-rails"
+end
+
+group :test do
   gem "rspec"
   gem "cucumber-rails"
   gem "database_cleaner"
   gem "capybara"
-  gem "rspec-rails"
 end
 
 
