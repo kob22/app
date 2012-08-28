@@ -21,31 +21,17 @@ Wtedy /^zobaczymy pola "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)"$/ do
   page.should have_content(arg6)
 end
 
-Wtedy /^uzupełnię "(.*?)" tekstem <tytuł>$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+Wtedy /^uzupełnię "([^\"]*)" tekstem "([^\"]*)"$/ do |field, value|
+  fill_in(field, :with => value)
+end
+Wtedy /^uzupełnię:$/ do |table|
+  table.rows_hash.each do |name, value|
+   step %{uzupełnię "#{name}" tekstem "#{value}"}
+  end
 end
 
-Wtedy /^uzupełnię "(.*?)" tekstem <imię>$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
 
-Wtedy /^uzupełnię "(.*?)" tekstem <nazwisko>$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-Wtedy /^uzupełnię "(.*?)" tekstem <email>$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-Wtedy /^uzupełnię "(.*?)" tekstem <hasło>$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-Wtedy /^kliknę przycisk "(.*?)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-Wtedy /^zobaczę tekst "(.*?)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+Wtedy /^kliknę przycisk "(.*?)"$/ do |button|
+  click_button(button)
 end
 

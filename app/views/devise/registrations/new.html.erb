@@ -1,0 +1,27 @@
+<h2>Zarejestruj się</h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :tytuł %><br />
+  <%= f.text_field :tytuł %></div>
+
+  <div><%= f.label :imię %><br />
+  <%= f.text_field :imię %></div>
+
+  <div><%= f.label :nazwisko %><br />
+  <%= f.text_field :nazwisko %></div>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email %></div>
+
+  <div><%= f.label :hasło %><br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :"powtórz hasło" %><br />
+  <%= f.password_field :password_confirmation %></div>
+
+  <div><%= f.submit "Zarejestruj się" %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>
