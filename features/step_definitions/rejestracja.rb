@@ -8,9 +8,10 @@ Zakładając /^klilkniemy w link "(.*?)"$/ do |link|
   click_link(link)
 end
 
-Wtedy /^zobaczymy tekst "(.*?)"$/ do |text|
+Wtedy /^zobaczymy komunikat "(.*?)"$/ do |text|
   page.should have_content(text)
 end
+
 
 Wtedy /^zobaczymy pola "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)"$/ do |arg1, arg2, arg3, arg4, arg5, arg6|
   page.should have_content(arg1)
@@ -24,11 +25,7 @@ end
 Wtedy /^uzupełnię "([^\"]*)" tekstem "([^\"]*)"$/ do |field, value|
   fill_in(field, :with => value)
 end
-Wtedy /^uzupełnię:$/ do |table|
-  table.rows_hash.each do |name, value|
-   step %{uzupełnię "#{name}" tekstem "#{value}"}
-  end
-end
+
 
 
 Wtedy /^kliknę przycisk "(.*?)"$/ do |button|
