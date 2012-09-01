@@ -81,3 +81,14 @@ Wtedy /^powinienem być wylogowany$/ do
   page.should have_content("Zarejestruj się")
   page.should have_content("Zaloguj się")
 end
+
+Zakładając /^chcemy się zalogować to klikniemy link "(.*?)"$/ do |link|
+  rejestracja_usera
+  click_link(link)
+end
+
+Wtedy /^zobaczymy dwa pola "(.*?)", "(.*?)"$/ do |arg1, arg2|
+  page.should have_content(arg1)
+  page.should have_content(arg2)
+end
+
