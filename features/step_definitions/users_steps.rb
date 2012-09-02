@@ -37,10 +37,6 @@ Zakładając /^że rejestrujemy się z blędnym emailem$/ do
 end
 
 
-Wtedy /^zobaczymy komunikat "(.*?)"$/ do |text|
-  page.should have_content(text)
-end
-
 
 Wtedy /^zobaczymy pola "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)"$/ do |arg1, arg2, arg3, arg4, arg5, arg6|
   page.should have_content(arg1)
@@ -51,25 +47,11 @@ Wtedy /^zobaczymy pola "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)", "(.*?)"$/ do
   page.should have_content(arg6)
 end
 
-Wtedy /^uzupełnię "([^\"]*)" tekstem "([^\"]*)"$/ do |field, value|
-  fill_in(field, :with => value)
-end
-
-
-
-Wtedy /^kliknę przycisk "(.*?)"$/ do |button|
-  click_button(button)
-end
-
 
 Zakładając /^że jesteśmy zalogowani$/ do
   rejestracja_usera
 
 logowanie_usera
-end
-
-Kiedy /^klikniemy link "(.*?)"$/ do |link|
-  click_link(link)
 end
 
 Zakładając /^wrócimy na "(.*?)"$/ do |text|
@@ -87,8 +69,4 @@ Zakładając /^chcemy się zalogować to klikniemy link "(.*?)"$/ do |link|
   click_link(link)
 end
 
-Wtedy /^zobaczymy dwa pola "(.*?)", "(.*?)"$/ do |arg1, arg2|
-  page.should have_content(arg1)
-  page.should have_content(arg2)
-end
 
