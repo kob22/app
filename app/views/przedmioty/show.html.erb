@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Rok:</b>
+  <%= @przedmiot.rok %>
+</p>
+
+<p>
+  <b>Przedmiot:</b>
+  <%= @przedmiot.przedmiot %>
+</p>
+
+
+<%= link_to 'Edytuj', edit_przedmiot_path(@przedmiot) %> |
+<%= link_to 'Powrót', przedmioty_path %>

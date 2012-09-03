@@ -1,5 +1,7 @@
 App::Application.routes.draw do
   
+  resources :przedmioty
+
   root :to => "static_pages#home"
   devise_for :users
 

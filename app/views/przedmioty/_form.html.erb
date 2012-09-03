@@ -1,0 +1,25 @@
+<%= form_for(@przedmiot) do |f| %>
+  <% if @przedmiot.errors.any? %>
+    <div id="error_explanation">
+      <h2>Przedmiot nie został dodany z powodu następujących błędów </h2>
+
+      <ul>
+      <% @przedmiot.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :rok %><br />
+    <%= f.text_field :rok %>
+  </div>
+  <div class="field">
+    <%= f.label :przedmiot %><br />
+    <%= f.text_field :przedmiot %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

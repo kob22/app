@@ -12,6 +12,7 @@ Jako użytkownik chcę się zalogować, aby móc bezpiecznie korzystać z serwis
 	I uzupełnię "user_password" tekstem "<hasło>"
 	Wtedy kliknę przycisk "Zaloguj się"
 	I zobaczymy komunikat "Witaj ponownie!"
+	Oraz zobaczymy komunikat "Zalogowany jako <email>"
 
 	Przykłady:
 	|email|hasło|

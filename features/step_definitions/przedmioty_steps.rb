@@ -16,3 +16,10 @@ Wtedy /^tekst "(.*?)" i "(.*?)"$/ do |arg1, arg2|
   page.should have_content(arg2)
 end
 
+Zakładając /^że jesteśmy niezalogowani$/ do
+  visit('/users/sign_out')
+end
+
+Kiedy /^wejdziemy w link przedmioty$/ do 
+ visit przedmioty_path
+end

@@ -23,6 +23,11 @@ visit('/users/sign_in')
   visit root_url
 end
 
+def wylogowanie_usera
+visit('/users/sign_out')
+  page.should have_content "Wylogowałeś się. Zapraszamy ponownie!"
+  visit root_url
+end
 Zakładając /^że jesteśmy na "(.*?)"$/ do |text|
   visit root_url
 page.should have_content(text)
