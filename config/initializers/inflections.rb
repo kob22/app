@@ -17,5 +17,6 @@
 
 ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'przedmiot', 'przedmioty'
+  inflect.irregular 'grupa', 'grupy'
   inflect.uncountable %w( rok )
 end

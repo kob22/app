@@ -1,0 +1,31 @@
+<h1>Listing grupy</h1>
+
+<table>
+  <tr>
+    <th>Grupa</th>
+    <th>Przedmiot</th>
+    <th>Dzień</th>
+    <th>Godzina</th>
+    <th>Tydzień</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @grupy.each do |grupa| %>
+  <tr>
+    <td><%= grupa.grupa %></td>
+    <td><%= grupa.przedmiot_id %></td>
+    <td><%= grupa.dzień %></td>
+    <td><%= grupa.godzina %></td>
+    <td><%= grupa.tydzień %></td>
+    <td><%= link_to 'Show', grupa %></td>
+    <td><%= link_to 'Edit', edit_grupa_path(grupa) %></td>
+    <td><%= link_to 'Destroy', grupa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Grupa', new_grupa_path %>

@@ -12,7 +12,7 @@
   <% end %>
     <div class="field">
       <%= f.label :rok_id, 'Wybierz rok' %>
-      <%= f.collection_select :rok_id, Rok.find(:all), :id, :rok, :prompt => "Wybierz rok" %>
+      <%= f.collection_select :rok_id, Rok.find(:all), :id, :rok, :prompt => "Wybierz rok", include_blank: true  %>
     </div>
    <div class="field">
     lub dodaj nowy <%= f.label :new_rok_name, 'Rok' %><br />

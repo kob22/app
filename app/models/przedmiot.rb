@@ -1,5 +1,6 @@
 class Przedmiot < ActiveRecord::Base
 belongs_to :rok
+has_many :grupy
 attr_accessor :new_rok_name
 attr_accessible :przedmiot, :rok_id, :new_rok_name
 validates_presence_of :przedmiot

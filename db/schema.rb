@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120904144336) do
+ActiveRecord::Schema.define(:version => 20120904213206) do
+
+  create_table "grupy", :force => true do |t|
+    t.string   "grupa"
+    t.integer  "przedmiot_id"
+    t.string   "dzień"
+    t.time     "godzina"
+    t.string   "tydzień"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "przedmioty", :force => true do |t|
     t.string   "przedmiot"

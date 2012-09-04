@@ -1,5 +1,7 @@
 App::Application.routes.draw do
   
+  resources :grupy
+
   resources :przedmioty
 
   root :to => "static_pages#home"

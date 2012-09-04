@@ -1,0 +1,37 @@
+<%= form_for(@grupa) do |f| %>
+  <% if @grupa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@grupa.errors.count, "error") %> prohibited this grupa from being saved:</h2>
+
+      <ul>
+      <% @grupa.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :grupa %><br />
+    <%= f.text_field :grupa %>
+  </div>
+  <div class="field">
+    <%= f.label :przedmiot_id, "Wybierz rok i przedmiot" %><br />
+    <%= f.collection_select :przedmiot_id, Przedmiot.find(:all), :id, :rok_id.rok, :przedmiot,  :prompt => "Wybierz rok i przedmiot" %>
+  </div>
+  <div class="field">
+    <%= f.label :dzień %><br />
+    <%= f.text_field :dzień %>
+  </div>
+  <div class="field">
+    <%= f.label :godzina %><br />
+    <%= f.time_select :godzina %>
+  </div>
+  <div class="field">
+    <%= f.label :tydzień %><br />
+    <%= f.text_field :tydzień %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
