@@ -1,4 +1,5 @@
 class Przedmiot < ActiveRecord::Base
+  has_many :Rok
   attr_accessible :przedmiot, :rok
 validates_presence_of :rok
 validates_presence_of :przedmiot
