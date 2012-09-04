@@ -11,7 +11,7 @@
 
 <% @przedmioty.each do |przedmiot| %>
   <tr>
-    <td><%= przedmiot.rok %></td>
+    <td><%= przedmiot.rok.rok %></td>
     <td><%= przedmiot.przedmiot %></td>
     <td><%= link_to 'Pokaż', przedmiot %></td>
     <td><%= link_to 'Edytuj', edit_przedmiot_path(przedmiot) %></td>

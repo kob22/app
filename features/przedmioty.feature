@@ -6,7 +6,7 @@ Rok od 3 do 20 znaków
 Przedmiot od 3 do 100 znaków
 
 
-	Szablon scenariusza: Poprawne dodanie przedmiotu
+	Szablon scenariusza: Poprawne dodanie przedmiotu z nowym rokiem
 	Zakładając że jesteśmy zalogowani i na "Strona główna"
 	I chcemy dodać przedmiot to klikniemy link "Przedmioty"
 	Wtedy klikniemy link "Dodaj przedmiot"
@@ -21,6 +21,23 @@ Przedmiot od 3 do 100 znaków
 	Przykłady:
 	|Rok|Przedmiot|
 	|3EFA-DI| Nowoczesne technologie programistyczne |
+
+  Szablon scenariusza: Poprawne dodanie przedmiotu z wybranym rokiem
+  Zakładając że jesteśmy zalogowani i na "Strona główna"
+  I "<rok>" jest dodany
+  I chcemy dodać przedmiot to klikniemy link "Przedmioty"
+  Wtedy klikniemy link "Dodaj przedmiot"
+  Oraz zobaczymy komunikat "Dodaj przedmiot"
+  I zobaczymy dwa pola "Wybierz rok", "Przedmiot"
+  Wtedy wybiorę "<rok>" z "Wybierz rok"
+  I uzupełnię "Przedmiot" tekstem "<przedmiot>"
+  Wtedy kliknę przycisk "Utwórz Przedmiot"
+  I zobaczymy komunikat "Przedmiot został dodany"
+  Oraz tekst "<rok>" i "<przedmiot>"
+
+  Przykłady:
+  |Rok|Przedmiot|
+  |3EFA-DI| Nowoczesne technologie programistyczne |
 
 	Szablon scenariusza: Niepoprawne dodanie przedmiotu
 	Zakładając że jesteśmy zalogowani i na "Strona główna"

@@ -10,10 +10,13 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :rok %><br />
-    <%= f.text_field :rok %>
+    <div class="field">
+      <%= f.label :rok_id, 'Wybierz rok' %>
+      <%= f.collection_select :rok_id, Rok.find(:all), :id, :rok, :prompt => "Wybierz rok" %>
+    </div>
+   <div class="field">
+    lub dodaj nowy <%= f.label :new_rok_name, 'Rok' %><br />
+    <%= f.text_field :new_rok_name %>
   </div>
   <div class="field">
     <%= f.label :przedmiot %><br />
@@ -22,4 +25,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

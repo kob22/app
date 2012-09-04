@@ -23,3 +23,12 @@ end
 Kiedy /^wejdziemy w link przedmioty$/ do 
  visit przedmioty_path
 end
+
+Zakładając /^"(.*?)" jest dodany$/ do |text|
+  Rok.create(:rok => text)
+
+end
+
+When /^wybiorę "([^\"]*)" z "([^\"]*)"$/ do |value, field|
+  select(value, :from => field)
+end
