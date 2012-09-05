@@ -1,7 +1,7 @@
 <%= form_for(@grupa) do |f| %>
   <% if @grupa.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@grupa.errors.count, "error") %> prohibited this grupa from being saved:</h2>
+      <h2>Grupa nie została dodana z powodu następujących błędów </h2>
 
       <ul>
       <% @grupa.errors.full_messages.each do |msg| %>
@@ -15,13 +15,19 @@
     <%= f.label :grupa %><br />
     <%= f.text_field :grupa %>
   </div>
-  <div class="field">
-    <%= f.label :przedmiot_id, "Wybierz rok i przedmiot" %><br />
-    <%= f.collection_select :przedmiot_id, Przedmiot.find(:all), :id, :rok_id.rok, :przedmiot,  :prompt => "Wybierz rok i przedmiot" %>
-  </div>
+    <div class="field">
+      <%= f.label :rok_id, "Rok" %><br />
+      <%= f.collection_select :rok_id, Rok.order(:rok), :id, :rok, include_blank: true %>
+    </div>
+    <div class="field">
+      <%= f.label :przedmiot_id, "Przedmiot" %><br />
+      <%= f.grouped_collection_select :przedmiot_id, Rok.order(:rok), :przedmioty, :rok, :id,  :przedmiot, include_blank: true  %>
+    </div>
+
+
   <div class="field">
     <%= f.label :dzień %><br />
-    <%= f.text_field :dzień %>
+    <%= f.select :dzień, dzień_h%>
   </div>
   <div class="field">
     <%= f.label :godzina %><br />
@@ -29,7 +35,7 @@
   </div>
   <div class="field">
     <%= f.label :tydzień %><br />
-    <%= f.text_field :tydzień %>
+    <%= f.select :tydzień, tydzień_h%>
   </div>
   <div class="actions">
     <%= f.submit %>

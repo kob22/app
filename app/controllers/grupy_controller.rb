@@ -1,3 +1,4 @@
+# encoding: utf-8
 class GrupyController < ApplicationController
   # GET /grupy
   # GET /grupy.json
@@ -44,7 +45,7 @@ class GrupyController < ApplicationController
 
     respond_to do |format|
       if @grupa.save
-        format.html { redirect_to @grupa, notice: 'Grupa was successfully created.' }
+        format.html { redirect_to @grupa, notice: 'Grupa została dodana.' }
         format.json { render json: @grupa, status: :created, location: @grupa }
       else
         format.html { render action: "new" }
@@ -60,7 +61,7 @@ class GrupyController < ApplicationController
 
     respond_to do |format|
       if @grupa.update_attributes(params[:grupa])
-        format.html { redirect_to @grupa, notice: 'Grupa was successfully updated.' }
+        format.html { redirect_to @grupa, notice: 'Grupa została zaktualizowana.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

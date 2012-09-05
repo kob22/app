@@ -28,7 +28,3 @@ Zakładając /^"(.*?)" jest dodany$/ do |text|
   Rok.create(:rok => text)
 
 end
-
-When /^wybiorę "([^\"]*)" z "([^\"]*)"$/ do |value, field|
-  select(value, :from => field)
-end

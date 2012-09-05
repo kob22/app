@@ -22,3 +22,8 @@ Wtedy /^zobaczymy dwa pola "(.*?)", "(.*?)"$/ do |arg1, arg2|
   page.should have_content(arg1)
   page.should have_content(arg2)
 end
+
+
+Wtedy /^wybiorę "([^\"]*)" z "([^\"]*)"$/ do |value, field|
+  select(value, :from => field)
+end
