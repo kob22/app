@@ -1,5 +1,8 @@
 # encoding: utf-8
 class User < ActiveRecord::Base
+  has_many :rok
+  has_many :przedmioty
+  has_many :grupy
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -16,4 +19,12 @@ validates_length_of :tytuł, :minimum => 3, :maximum => 50
 validates_length_of :imię, :minimum => 3, :maximum => 50
 validates_length_of :nazwisko, :minimum => 3, :maximum => 50
 validates_length_of :email, :maximum => 50
+
+  def self.current_user
+    Thread.current[:current_user]
+  end
+
+  def self.current_user=(usr)
+    Thread.current[:current_user] = usr
+  end
 end

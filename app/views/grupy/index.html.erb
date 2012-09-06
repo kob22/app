@@ -19,7 +19,7 @@
     <td><%= grupa.przedmiot.rok.rok %></td>
     <td><%= grupa.przedmiot.przedmiot %></td>
     <td><%= grupa.dzień %></td>
-    <td><%= grupa.godzina %></td>
+    <td><%= formated_godzina(grupa.godzina) %></td>
     <td><%= grupa.tydzień %></td>
     <td><%= link_to 'Pokaż', grupa %></td>
     <td><%= link_to 'Edytuj', edit_grupa_path(grupa) %></td>

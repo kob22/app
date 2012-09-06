@@ -1,16 +1,21 @@
 class Przedmiot < ActiveRecord::Base
-belongs_to :rok
-has_many :grupy
-attr_accessor :new_rok_name
-attr_accessible :przedmiot, :rok_id, :new_rok_name
-validates_presence_of :przedmiot
-validates_length_of :przedmiot, :minimum => 3, :maximum => 100
+  belongs_to :rok
+  has_many :grupy
+  belongs_to :user
+  attr_accessible :przedmiot, :rok_id, :rok_name
+  validates_presence_of :przedmiot
+  validates_length_of :przedmiot, :minimum => 3, :maximum => 100
+  validates_presence_of :rok_name
+  validates_length_of :rok_name, :minimum => 3, :maximum => 20
+  validates_uniqueness_of :przedmiot, :scope => [:rok_id, :user_id]
 
 
-before_save :create_rok_name
+  def rok_name
+    rok.try(:rok)
+  end
 
-def create_rok_name
-  create_rok(:rok => new_rok_name) unless new_rok_name.blank?
-end
+  def rok_name=(name)
+    self.rok = Rok.find_or_create_by_rok_and_user_id(name, User.current_user.id) if name.present?
+  end
 
 end

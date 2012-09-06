@@ -1,0 +1,3 @@
+class RokController < ApplicationController
+
+end

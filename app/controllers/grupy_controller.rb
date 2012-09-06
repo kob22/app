@@ -3,7 +3,7 @@ class GrupyController < ApplicationController
   # GET /grupy
   # GET /grupy.json
   def index
-    @grupy = Grupa.all
+    @grupy = current_user.grupy.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +14,7 @@ class GrupyController < ApplicationController
   # GET /grupy/1
   # GET /grupy/1.json
   def show
-    @grupa = Grupa.find(params[:id])
+    @grupa = current_user.grupy.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -42,7 +42,7 @@ class GrupyController < ApplicationController
   # POST /grupy.json
   def create
     @grupa = Grupa.new(params[:grupa])
-
+    @grupa.user_id = current_user.id
     respond_to do |format|
       if @grupa.save
         format.html { redirect_to @grupa, notice: 'Grupa została dodana.' }
@@ -81,4 +81,6 @@ class GrupyController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
 end

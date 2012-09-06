@@ -10,15 +10,13 @@
       </ul>
     </div>
   <% end %>
+
     <div class="field">
-      <%= f.label :rok_id, 'Wybierz rok' %>
-      <%= f.collection_select :rok_id, Rok.find(:all), :id, :rok, :prompt => "Wybierz rok", include_blank: true  %>
+      <%= f.label :rok_name, 'Rok' %>
+      <%= f.text_field :rok_name, data: {autocomplete_source:  rok_autos_path} %>
     </div>
-   <div class="field">
-    lub dodaj nowy <%= f.label :new_rok_name, 'Rok' %><br />
-    <%= f.text_field :new_rok_name %>
-  </div>
-  <div class="field">
+
+    <div class="field">
     <%= f.label :przedmiot %><br />
     <%= f.text_field :przedmiot %>
   </div>

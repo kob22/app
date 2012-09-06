@@ -3,7 +3,8 @@ App::Application.routes.draw do
   resources :grupy
 
   resources :przedmioty
-
+ resources :rok_autos
+  resources :przedmiotyautos
   root :to => "static_pages#home"
   devise_for :users
 

@@ -9,5 +9,7 @@ module GrupyHelper
   def tydzień_h
     ["A","B","AB"]
   end
-
+  def formated_godzina(godzina)
+    godzina.to_s(:time)
+  end
 end

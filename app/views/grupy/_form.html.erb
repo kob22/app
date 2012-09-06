@@ -17,11 +17,11 @@
   </div>
     <div class="field">
       <%= f.label :rok_id, "Rok" %><br />
-      <%= f.collection_select :rok_id, Rok.order(:rok), :id, :rok, include_blank: true %>
+      <%= f.collection_select :rok_id, current_user.rok.order(:rok), :id, :rok, include_blank: true %>
     </div>
     <div class="field">
       <%= f.label :przedmiot_id, "Przedmiot" %><br />
-      <%= f.grouped_collection_select :przedmiot_id, Rok.order(:rok), :przedmioty, :rok, :id,  :przedmiot, include_blank: true  %>
+      <%= f.grouped_collection_select :przedmiot_id, current_user.rok.order(:rok), :przedmioty, :rok, :id,  :przedmiot, include_blank: true  %>
     </div>
 
 
